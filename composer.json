@@ -1,0 +1,31 @@
+{
+  "name": "mondagroup/monda-php",
+  "description": "盟大框架",
+  "authors": [
+    {
+      "name": "chenzf",
+      "email": "chenzf@pvc123.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "mondagroup/monda-php-framework": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "app/"
+    },
+    "files": [
+      "app/function.php"
+    ]
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer"
+    }
+  },
+  "scripts": {
+    "cs-fix": "composer dump -o && php-cs-fixer fix $1"
+  }
+}
