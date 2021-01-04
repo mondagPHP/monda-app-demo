@@ -246,10 +246,17 @@ class IndexAction extends Controller
 
     public function index18(RequestInterface $request): Result
     {
+        $a = 11;
+        try {
+            DB::transaction('bi', static function () use ($a) {
+                Url::query()->where('id', '015ff2862c00c2d9a4')->update(['sort' => 1000]);
+                throw new HeroException('测试');
+            }, 1);
+        } catch (\Throwable $e) {
+            var_dump($e->getMessage());
+        }
         return Result::ok()->data([
-
             'uid' => $request->getClientIp(),
-
         ]);
     }
 }

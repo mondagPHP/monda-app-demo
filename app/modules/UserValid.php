@@ -2,7 +2,6 @@
 
 namespace app\modules;
 
-
 use framework\validate\Validate;
 
 class UserValid extends Validate

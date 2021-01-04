@@ -2,7 +2,6 @@
 
 namespace app\modules;
 
-
 use framework\db\Model;
 
 class Url extends Model
@@ -17,6 +16,7 @@ class Url extends Model
         'name',
         'logo',
         'url',
+        'sort',
         'create_user_id',
         'is_workbench'
     ];

@@ -2,7 +2,6 @@
 
 namespace app\modules\admin\validate;
 
-
 use framework\validate\Validate;
 
 class UserValidator extends Validate

@@ -5,7 +5,6 @@
  */
 namespace app\modules\admin\action\demo;
 
-
 use framework\Controller;
 use framework\request\RequestInterface;
 

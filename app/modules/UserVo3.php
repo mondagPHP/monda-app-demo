@@ -1,7 +1,6 @@
 <?php
 namespace app\modules;
 
-
 use framework\vo\RequestVoInterface;
 
 class UserVo3 implements RequestVoInterface

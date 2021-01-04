@@ -9,7 +9,10 @@
   ],
   "require": {
     "php": ">=7.2",
-    "mondagroup/monda-php-framework": "^1.0"
+    "mondagroup/monda-php-framework": "*@dev"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.14"
   },
   "autoload": {
     "psr-4": {
@@ -19,12 +22,12 @@
       "app/function.php"
     ]
   },
-  "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "https://mirrors.aliyun.com/composer"
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/Users/chenzifan/PhpstormProjects/monda-php-framework"
     }
-  },
+  ],
   "scripts": {
     "cs-fix": "composer dump -o && php-cs-fixer fix $1"
   }

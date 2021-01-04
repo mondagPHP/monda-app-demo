@@ -6,7 +6,6 @@
 
 namespace app\modules;
 
-
 use framework\db\Model;
 
 /**

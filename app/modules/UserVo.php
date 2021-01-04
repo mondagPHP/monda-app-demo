@@ -2,7 +2,6 @@
 
 namespace app\modules;
 
-
 use framework\vo\RequestVoInterface;
 
 /**
