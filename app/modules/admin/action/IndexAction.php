@@ -15,15 +15,18 @@ use app\modules\UserVo3;
 
 use framework\cache\ICache;
 use framework\Controller;
+use framework\cookie\Cookie;
 use framework\crypt\Base64Crypt;
 use framework\crypt\Crypt;
 use framework\crypt\RSACrypt;
 use framework\db\DB;
 use framework\exception\HeroException;
 use framework\lock\FileSynLock;
+use framework\log\Logger;
 use framework\request\RequestInterface;
 use framework\session\Session;
 use framework\util\Loader;
+use framework\util\Log;
 use framework\util\Result;
 use Spatie\Async\Pool;
 
@@ -253,10 +256,19 @@ class IndexAction extends Controller
                 throw new HeroException('测试');
             }, 1);
         } catch (\Throwable $e) {
-            var_dump($e->getMessage());
+            echo $e->getMessage();
+            die;
         }
         return Result::ok()->data([
             'uid' => $request->getClientIp(),
         ]);
+    }
+
+    public function index19(): string
+    {
+        Log::debug("{a} hello", ['a' => '你好']);
+        $c = new Cookie();
+        $c->set("aaa", 'ces');
+        return $c->get('aaa');
     }
 }
