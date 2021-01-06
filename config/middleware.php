@@ -7,6 +7,7 @@ return [
     //全局
     'global' => [
         \app\middleware\GlobalMiddleWare::class,
+        \app\middleware\EnableCrossMiddleware::class,
     ],
 
     //模块名
