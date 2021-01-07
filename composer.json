@@ -9,7 +9,8 @@
   ],
   "require": {
     "php": ">=7.2",
-    "mondagroup/monda-php-framework": "*@dev"
+    "mondagroup/monda-php-framework": "*@dev",
+    "swoole/ide-helper": "~4.4.7"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.14"

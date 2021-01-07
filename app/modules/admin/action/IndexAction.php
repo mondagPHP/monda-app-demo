@@ -21,14 +21,11 @@ use framework\crypt\Crypt;
 use framework\crypt\RSACrypt;
 use framework\db\DB;
 use framework\exception\HeroException;
-use framework\lock\FileSynLock;
-use framework\log\Logger;
 use framework\request\RequestInterface;
 use framework\session\Session;
 use framework\util\Loader;
 use framework\util\Log;
 use framework\util\Result;
-use Spatie\Async\Pool;
 
 /**
  * Class UserController.
@@ -37,12 +34,13 @@ class IndexAction extends Controller
 {
     public function index(RequestInterface $request): array
     {
-        $a = new FileSynLock(1);
 
-        $xxx = $a->tryLock();
+        //Log::info("helloworld");
 
+        //Cookie::set("s_hello", [1, 2, 3]);
+
+        $a = Cookie::get('s_hello');
         return [
-            'xx' => $xxx,
             'ip' => $request->getClientIp(),
             'method' => $request->getMethod(),
             'url' => $request->getUri(),
@@ -266,9 +264,39 @@ class IndexAction extends Controller
 
     public function index19(): string
     {
-        Log::debug("{a} hello", ['a' => '你好']);
-        $c = new Cookie();
-        $c->set("aaa", 'ces');
-        return $c->get('aaa');
+        Log::debug('{a} hello', ['a' => '你好']);
+        return 1;
+    }
+
+    /**
+     * 上传
+     * @param RequestInterface $request
+     * @return string
+     * @throws \Exception
+     */
+    public function upload(RequestInterface $request): string
+    {
+        $request->getUploadFile('src')->move(RUNTIME_PATH . '/upload');
+        return 1;
+    }
+
+    /**
+     * 上传
+     * @param RequestInterface $request
+     * @return string
+     * @throws \Exception
+     */
+    public function uploadValid(RequestInterface $request): string
+    {
+        $request->getUploadFile('src')->isValid([
+            'allow_ext' => 'jpg',
+            //图片的最大宽度, 0没有限制
+            'max_width' => 0,
+            //图片的最大高度, 0没有限制
+            'max_height' => 0,
+            //文件的最大尺寸
+            'max_size' => 1024000,     /* 文件size的最大 1MB */
+        ])->move(RUNTIME_PATH . '/upload');
+        return 1;
     }
 }

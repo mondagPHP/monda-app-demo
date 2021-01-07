@@ -1,8 +1,6 @@
 <?php
 
-
 namespace app\middleware;
-
 
 use Closure;
 use framework\request\RequestInterface;
@@ -38,5 +36,4 @@ class EnableCrossMiddleware
         }
         return $return;
     }
-
 }

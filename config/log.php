@@ -4,7 +4,7 @@
  *
  */
 return [
-    'default' => 'daily',
+    'default' => 'stack',
     'channels' => [
         //所有日志在一个文件上
         'stack' => [
