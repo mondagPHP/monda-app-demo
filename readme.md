@@ -1,13 +1,10 @@
 # Monda-PHP框架
 
-版本更新记录
-======
 
-## version 1.0.1
-1. 增加命令行工具执行task
-2. 增加DB添加事务控制-transaction
-
-
+## 安装核心core
+ ```shell
+  composer require mondagroup/monda-php-framework
+ ```
 
 ## 须知
 直接在 public执行
