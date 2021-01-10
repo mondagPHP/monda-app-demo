@@ -13,18 +13,19 @@ use app\modules\UserVo;
 use app\modules\UserVo2;
 use app\modules\UserVo3;
 
+use framework\cache\CacheFactory;
 use framework\cache\ICache;
+use framework\Container;
 use framework\Controller;
-use framework\cookie\Cookie;
 use framework\crypt\Base64Crypt;
 use framework\crypt\Crypt;
 use framework\crypt\RSACrypt;
 use framework\db\DB;
 use framework\exception\HeroException;
+use framework\log\Log;
 use framework\request\RequestInterface;
 use framework\session\Session;
 use framework\util\Loader;
-use framework\util\Log;
 use framework\util\Result;
 
 /**
@@ -34,16 +35,16 @@ class IndexAction extends Controller
 {
     public function index(RequestInterface $request): array
     {
-
-        //Log::info("helloworld");
-
+        $a = CacheFactory::get()->set('a', [1, 2]);
+        $c = CacheFactory::get()->get('a');
+        //Log::info("hello——world");
         //Cookie::set("s_hello", [1, 2, 3]);
-
-        $a = Cookie::get('s_hello');
         return [
             'ip' => $request->getClientIp(),
             'method' => $request->getMethod(),
             'url' => $request->getUri(),
+            'a' => $a,
+            'c' => $c,
         ];
     }
 
@@ -131,17 +132,13 @@ class IndexAction extends Controller
     }
 
     /**
-     * @param RequestInterface $request
-     * @param string $uid
      * @param UserVo $userVo
      * @return array
      */
-    public function index10(RequestInterface $request, string $uid, UserVo $userVo): array
+    public function index10(UserVo $userVo): array
     {
         return [
-            'uid' => $uid,
             'a' => 1,
-            're' => $request->getRequestParams(),
             'name' => $userVo->getName(),
             'age' => $userVo->getAge(),
         ];
@@ -222,24 +219,6 @@ class IndexAction extends Controller
             sleep(1);
             echo $output . "\n";
         }
-        echo '-----' . PHP_EOL;
-        echo time() - $st;
-        die;
-    }
-
-    public function index17(): void
-    {
-        $pool = Pool::create();
-        $st = time();
-        foreach (range(1, 5) as $i) {
-            $pool[] = async(static function () use ($i) {
-                sleep(1);
-                return $i * 2;
-            })->then(function (int $output) {
-                echo $output . "\n";
-            });
-        }
-        await($pool);
         echo '-----' . PHP_EOL;
         echo time() - $st;
         die;

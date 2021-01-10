@@ -23,9 +23,9 @@ class EnableCrossMiddleware
     {
         $return = $next($request);
         //前端需要在请求头加上HTTP_ORIGIN,防止其他人连接
-        $origin = $request->getHeaders()['HTTP_ORIGIN'] ?: '';
+        $origin = $request->getHeaders()['HTTP_ORIGIN'] ?? '';
         $allowOrigin = [
-            'http://127.0.0.1:123456',
+            'http://127.0.0.1:12345',
         ];
         if (in_array($origin, $allowOrigin)) {
             response()->addHeader('Access-Control-Allow-Origin', $origin);

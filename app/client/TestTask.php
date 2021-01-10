@@ -1,4 +1,5 @@
 <?php
+
 namespace app\client;
 
 use app\modules\User;
@@ -8,7 +9,10 @@ class TestTask implements ITask
 {
     public function run(): void
     {
-        echo User::query()->count();
-        echo 111;
+        $a = User::query()
+            ->orderBy('created_at', 'desc')
+            ->paginate(2);
+
+        var_dump($a);
     }
 }

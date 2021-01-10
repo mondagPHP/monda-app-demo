@@ -1,0 +1,10 @@
+#配置文件
+#用于生成安全的cookie
+app_key=pnJELx5Wr6qjMhGfyOND3iXwlP1BICRe
+app_name=demo
+#redis
+redis_hostname=172.28.1.3
+redis_port=6379
+redis_prefix=herosphp:
+redis_password=
+redis_database=12

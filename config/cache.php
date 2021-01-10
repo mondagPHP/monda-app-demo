@@ -8,9 +8,9 @@ return [
 
     //文件缓存
     'file' => [
-        'cache_dir' => RUNTIME_PATH . '/cache/',
-        'cache_per' => '0777',
+        'cache_dir' => RUNTIME_PATH . '/cache/'
     ],
+
     //redis
     'redis' => [
         'parameters' => [

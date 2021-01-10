@@ -13,20 +13,9 @@ class UserVo implements RequestVoInterface
     private $name;
     private $age;
 
-    /**
-     * @return string
-     */
-    public function getRequestValidator(): string
+    public function valid(): array
     {
-        return '';
-    }
-
-    /**
-     * @return string
-     */
-    public function getRequestScene(): string
-    {
-        return '';
+        return [UserValid::class, 'edit'];
     }
 
     /**

@@ -50,4 +50,9 @@ class UserVo2 implements RequestVoInterface
     {
         $this->age = $age;
     }
+
+    public function valid(): array
+    {
+        return [];
+    }
 }

@@ -14,8 +14,9 @@ define('SERVER_NODE', 0x01);
 define('START_TIME', microtime(true));
 //开始内存
 define('START_MEMORY', memory_get_usage());
-
-date_default_timezone_set(TIME_ZONE);  //设置默认时区
+//设置默认时区
+date_default_timezone_set(TIME_ZONE);
 require __DIR__ . '/../vendor/autoload.php';
+$env = config('app.app_env');
 //加载环境变量
-Dotenv::create(BASE_PATH, '.env')->load();
+Dotenv::create(BASE_PATH, 'env_' . $env)->load();

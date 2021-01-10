@@ -1,7 +1,6 @@
 <?php
 namespace tests\adminAction;
 
-use framework\Container;
 use PHPUnit\Framework\TestCase;
 
 class IndexActionTest extends TestCase
@@ -10,5 +9,4 @@ class IndexActionTest extends TestCase
     {
         $this->assertTrue(true);
     }
-
 }

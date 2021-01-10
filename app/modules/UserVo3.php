@@ -1,4 +1,5 @@
 <?php
+
 namespace app\modules;
 
 use framework\vo\RequestVoInterface;
@@ -40,21 +41,8 @@ class UserVo3 implements RequestVoInterface
         $this->age = $age;
     }
 
-    /**
-     * 验证器
-     * @return string
-     */
-    public function getRequestValidator(): string
+    public function valid(): array
     {
-        return UserValid::class;
-    }
-
-    /**
-     * @return string
-     * 场景
-     */
-    public function getRequestScene(): string
-    {
-        return 'edit';
+        return [UserValid::class, 'edit'];
     }
 }

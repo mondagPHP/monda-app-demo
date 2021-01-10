@@ -21,6 +21,6 @@ class UserValid extends Validate
     ];
 
     protected $scene = [
-        'edit' => ['name','age'],
+        'edit' => ['name', 'age'],
     ];
 }

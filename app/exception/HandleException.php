@@ -3,6 +3,7 @@
  * This file is part of Monda-PHP.
  *
  */
+
 namespace app\exception;
 
 use framework\exception\BaseExceptionHandler;
@@ -15,18 +16,6 @@ class HandleException extends BaseExceptionHandler
 {
     protected $ignores = [
     ];
-
-    /**
-     * @param $errorLevel
-     * @param $errorMessage
-     * @param $errorFile
-     * @param $errorLine
-     * @param $errorContext
-     * https://www.runoob.com/php/php-error.html
-     */
-    public function handleError($errorLevel, $errorMessage, $errorFile, $errorLine, $errorContext): void
-    {
-    }
 
     /**
      * @param Throwable $e

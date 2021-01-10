@@ -14,4 +14,8 @@ return [
     'app_key' => env('app_key', ''),
     //应用名称
     'app_name' => env('app_name', 'monda-php'),
+    //打印sql语句
+    'app_debug' => env('app_debug', false),
+    //环境
+    'app_env' => 'dev',
 ];
