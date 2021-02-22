@@ -4,23 +4,14 @@
  */
 return [
     'default' => [
-        'host' => '172.28.1.57',
+        'host' => '127.0.0.1',
         'driver' => 'mysql',
-        'database' => 'monda_crm',
-        'username' => 'php',
-        'password' => 'monda123',
+        'database' => 'test',
+        'username' => 'root',
+        'password' => '12345678',
         'charset' => 'utf8',
         'collation' => 'utf8_unicode_ci',
         'prefix' => '',
     ],
-    'bi' => [
-        'database' => 'monda_crm_bi',
-        'host' => '172.28.1.57',
-        'driver' => 'mysql',
-        'username' => 'php',
-        'password' => 'monda123',
-        'charset' => 'utf8',
-        'collation' => 'utf8_unicode_ci',
-        'prefix' => '',
-    ],
+
 ];
