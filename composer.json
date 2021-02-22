@@ -9,13 +9,14 @@
   ],
   "require": {
     "php": ">=7.2",
-    "mondagroup/monda-php-framework": "^1.0",
+    "mondagroup/monda-php-framework": "dev-master",
     "swoole/ide-helper": "~4.4.7"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.14",
     "phpunit/phpunit": "^8.5",
-    "mockery/mockery": "^1.3"
+    "mockery/mockery": "^1.3",
+    "doctrine/dbal": "^2.10"
   },
   "autoload": {
     "psr-4": {
@@ -26,12 +27,12 @@
       "app/function.php"
     ]
   },
-  "repositories": {
-    "packagist": {
+  "repositories": [
+    {
       "type": "composer",
       "url": "https://mirrors.aliyun.com/composer/"
     }
-  },
+  ],
   "scripts": {
     "cs-fix": "composer dump -o && php-cs-fixer fix $1"
   }
