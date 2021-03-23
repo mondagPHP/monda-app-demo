@@ -18,4 +18,10 @@ return [
     'app_debug' => env('app_debug', false),
     //环境
     'app_env' => 'dev',
+
+    //正则路由映射
+    'route_map' => [
+        '^\/index5$' => '/admin/index/index5',
+        '^\/index6$' => '/admin/index/index6'
+    ]
 ];

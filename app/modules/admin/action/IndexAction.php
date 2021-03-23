@@ -88,7 +88,7 @@ class IndexAction extends Controller
      */
     public function index6(): array
     {
-        $this->middleware = [WebMiddleWare::class];
+        self::$middleware = [WebMiddleWare::class];
         return [
             111,
         ];
@@ -117,6 +117,7 @@ class IndexAction extends Controller
      */
     public function index8(): string
     {
+        sleep(10);
         return '111';
     }
 
